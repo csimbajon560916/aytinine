@@ -1,0 +1,53 @@
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Level 5</title>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+  </head>
+
+  <body>
+    <div class="container py-5">
+        <div class="row justify-content-center">
+            <div class="col-12 col-md-8 col-lg-6">    
+                <div class="card cardragud shadow-sm">
+                    <div class="card-body">
+                    <h6><span id="badge" class="badge text-bg-primary">Level 5</span></h6>
+                    <h1 class="h4 fw-bold mt-2">Web Dev Mini-Quest</h1>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime nobis, soluta eaque nam nesciunt optio, pariatur modi facere</p>
+                    <div class="d-flex align-items-center justify-content-between mb-3">
+                <button id="minus" class="btn btn-outline-secondary">-1</button>
+                <div class="fw-bold fs-5">Coins: <span id="coins">0</span></div>
+                <button id="plus" class="btn btn-outline-secondary">+1</button>
+              </div>
+                    <div class="d-flex gap-2">
+                        <button class="btn btn-secondary w-50 btn-quest" onclick="window.location.href = 'level4.html'">Back</button>
+                        <button class="btn btn-primary w-50 btn-quest" onclick="window.location.href = 'level6.html'">Next Level</button>
+                        </div>
+                    </div>                   
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+      let coins = 0;
+
+      const coin = document.getElementById("coins");
+      const pluss = document.getElementById("plus");
+      const minuss = document.getElementById("minus");
+
+      plus.addEventListener("click", function () {
+        coins++;
+        coin.textContent = coins;
+      });
+
+      minus.addEventListener("click", function () {
+        if (coins > 0) coins--;
+        coin.textContent = coins;
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,61 @@
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Level 6</title>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+  </head>
+
+  <body>
+    <div class="container py-5">
+        <div class="row justify-content-center">
+            <div class="col-12 col-md-8 col-lg-6">    
+                <div class="card cardragud shadow-sm">
+                    <div class="card-body">
+                    <h6><span id="badge" class="badge text-bg-primary">Level 6</span></h6>
+                    <h1 class="h4 fw-bold mt-2">Web Dev Mini-Quest</h1>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime nobis, soluta eaque nam nesciunt optio, pariatur modi facere</p>
+                   <div class="d-flex gap-2">
+                <button class="btn btn-success flex-fill doorBtn" data-door="1">Door 1</button>
+                <button class="btn btn-warning flex-fill doorBtn" data-door="2">Door 2</button>
+                <button class="btn btn-danger flex-fill doorBtn" data-door="3">Door 3</button>
+              </div>
+
+              <div id="result" class="alert alert-secondary mt-3 mb-0">Choose a door to see the result.</div>
+
+              <hr />
+                    <div class="d-flex gap-2">
+                        <button class="btn btn-secondary w-50 btn-quest" onclick="window.location.href = 'level5.html'">Back</button>
+                        <button class="btn btn-primary w-50 btn-quest" onclick="window.location.href = 'level1.html'">Restart</button>
+                        </div>
+                    </div>                   
+                </div>
+            </div>
+        </div>
+    </div>
+     <script>
+      const correctDoor = 3;
+      const result = document.getElementById("result");
+      const doorBtns = document.querySelectorAll(".doorBtn");
+
+      doorBtns.forEach((btn) => {
+        btn.addEventListener("click", function () {
+          const picked = Number(btn.dataset.door);
+
+          if (picked === correctDoor) {
+            result.className = "alert alert-success mt-3 mb-0";
+            result.innerHTML =
+              '<i class="bi bi-trophy-fill me-2"></i> Correct! Quest Complete <i class="bi bi-check-circle-fill"></i>';
+          } else {
+            result.className = "alert alert-danger mt-3 mb-0";
+            result.innerHTML =
+              '<i class="bi bi-x-circle-fill me-2"></i> Wrong door. Try again!';
+          }
+        });
+      });
+    </script>
+  </body>
+</html>
